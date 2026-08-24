@@ -1,0 +1,897 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PIXEL | CLICKED</title>
+
+<meta name="description" content="PIXEL — an independent girl group based in Malta & Gozo. Enter the PIXEL universe.">
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(circle at 20% 10%, #7b2cff55, transparent 30%),
+        radial-gradient(circle at 80% 80%, #ff38d655, transparent 30%),
+        linear-gradient(135deg, #0418ff, #5717a8 45%, #05000d);
+
+    color: white;
+    overflow-x: hidden;
+}
+
+
+/* ================= NAV ================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 7%;
+
+    background: rgba(5,0,20,.88);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid #ffffff33;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 1000;
+    letter-spacing: 7px;
+
+    text-shadow:
+        0 0 10px #00eaff,
+        0 0 25px #9b4dff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .2s;
+}
+
+nav a:hover {
+    color: #5cf2ff;
+    text-shadow: 0 0 12px #5cf2ff;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 92vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    position: relative;
+}
+
+.hero h1 {
+    font-size: clamp(70px, 16vw, 180px);
+    letter-spacing: 15px;
+    font-weight: 1000;
+
+    text-shadow:
+        6px 6px #000,
+        0 0 15px #00eaff,
+        0 0 45px #8c42ff;
+
+    animation: glitch 3s infinite;
+}
+
+.hero p {
+    font-size: clamp(18px, 3vw, 30px);
+    margin-top: 15px;
+    color: #e7d5ff;
+}
+
+.button {
+    display: inline-block;
+
+    margin-top: 30px;
+    padding: 15px 30px;
+
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+
+    border: 2px solid white;
+    border-radius: 30px;
+
+    background: linear-gradient(90deg,#551cff,#ff32c8);
+
+    box-shadow:
+        0 0 15px #792cff,
+        0 0 35px #ff32c8;
+
+    transition: .25s;
+}
+
+.button:hover {
+    transform: scale(1.08);
+}
+
+
+/* ================= GENERAL ================= */
+
+section {
+    padding: 90px 8%;
+}
+
+.title {
+    text-align: center;
+
+    font-size: clamp(40px,7vw,75px);
+
+    margin-bottom: 45px;
+
+    text-shadow:
+        0 0 12px #8c42ff,
+        0 0 30px #00eaff;
+}
+
+.center {
+    max-width: 900px;
+    margin: auto;
+
+    text-align: center;
+
+    line-height: 1.8;
+    font-size: 19px;
+}
+
+
+/* ================= ABOUT ================= */
+
+.info-box {
+    max-width: 900px;
+    margin: auto;
+
+    padding: 40px;
+
+    background: #00000044;
+
+    border: 2px solid #ffffff33;
+    border-radius: 25px;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* ================= MEMBERS ================= */
+
+.members {
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+
+    /* CHANGED FROM 3 TO 4 FOR KARKAR */
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 25px;
+}
+
+.member {
+    padding: 30px;
+    text-align: center;
+
+    border-radius: 25px;
+
+    background: #ffffff0d;
+
+    border: 2px solid #ffffff22;
+
+    backdrop-filter: blur(10px);
+
+    transition: .3s;
+}
+
+.member:hover {
+    transform: translateY(-12px) rotate(1deg);
+}
+
+.avatar {
+    width: 155px;
+    height: 155px;
+
+    margin: auto auto 20px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 55px;
+    font-weight: 1000;
+
+    border: 5px solid white;
+}
+
+.jinx {
+    background: linear-gradient(135deg,#00eaff,#050505);
+    box-shadow: 0 0 35px #00eaff;
+}
+
+.mymy {
+    background: linear-gradient(135deg,#7620ff,#c46aff);
+    box-shadow: 0 0 35px #8d45ff;
+}
+
+.soso {
+    background: linear-gradient(135deg,#ff45c9,#ff9de8);
+    box-shadow: 0 0 35px #ff55d3;
+}
+
+
+/* ================= KARKAR ================= */
+
+.karkar {
+    background: linear-gradient(135deg,#ff2020,#8b0000);
+    box-shadow: 0 0 35px #ff2020;
+}
+
+.member h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.member p {
+    line-height: 1.8;
+    color: #ddd;
+}
+
+
+/* ================= ALBUM ================= */
+
+.album {
+    max-width: 1000px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 45px;
+
+    align-items: center;
+}
+
+.album img {
+    width: 100%;
+
+    border-radius: 15px;
+
+    border: 5px solid #111;
+
+    box-shadow:
+        12px 12px 0 #000,
+        0 0 45px #8d42ff;
+
+    transition: .3s;
+}
+
+.album img:hover {
+    transform: rotate(-2deg) scale(1.02);
+}
+
+.album-info h3 {
+    font-size: 55px;
+
+    color: #d59cff;
+
+    text-shadow: 0 0 20px #8d42ff;
+}
+
+.album-info p {
+    line-height: 1.8;
+    color: #ddd;
+    margin-top: 15px;
+}
+
+
+/* ================= OBSESSION ================= */
+
+.song {
+    max-width: 900px;
+    margin: auto;
+
+    text-align: center;
+
+    padding: 55px 30px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00eaff22,
+            #ff2fc822
+        );
+
+    border: 2px solid #ffffff33;
+
+    box-shadow: 0 0 45px #702cff44;
+}
+
+.song h3 {
+    font-size: clamp(50px,9vw,100px);
+
+    text-shadow:
+        5px 5px #000,
+        0 0 25px #00eaff;
+}
+
+.song p {
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+
+/* ================= SOCIALS ================= */
+
+.socials {
+    max-width: 1000px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 25px;
+}
+
+.social-card {
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    background: #00000044;
+
+    border: 2px solid #ffffff22;
+}
+
+.social-card h3 {
+    margin-bottom: 20px;
+}
+
+.social-card a {
+    display: block;
+
+    margin: 10px 0;
+
+    color: #65eaff;
+
+    text-decoration: none;
+
+    word-break: break-word;
+}
+
+.social-card a:hover {
+    color: #ff7ce3;
+}
+
+
+/* ================= CLICKZ ================= */
+
+.clickz {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+
+    padding: 60px 30px;
+
+    border-radius: 30px;
+
+    background: #00000055;
+
+    border: 2px dashed #c05cff;
+}
+
+.clickz h3 {
+    font-size: 65px;
+
+    color: #ff75e2;
+
+    text-shadow: 0 0 25px #ff35cf;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+
+    padding: 45px 20px;
+
+    background: #05000d;
+
+    color: #aaa;
+
+    border-top: 1px solid #ffffff22;
+}
+
+.footer-logo {
+    font-size: 38px;
+    letter-spacing: 9px;
+    color: white;
+
+    margin-bottom: 10px;
+}
+
+
+/* ================= ANIMATION ================= */
+
+@keyframes glitch {
+
+    0%,90%,100% {
+        transform: none;
+    }
+
+    92% {
+        transform: translateX(6px);
+    }
+
+    94% {
+        transform: translateX(-6px);
+    }
+
+    96% {
+        transform: translateX(3px);
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:800px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    .members,
+    .socials {
+        grid-template-columns: 1fr;
+    }
+
+    .album {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 65px 6%;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<nav>
+
+<div class="logo">PIXEL</div>
+
+<ul>
+<li><a href="#about">ABOUT</a></li>
+<li><a href="#members">MEMBERS</a></li>
+<li><a href="#clicked">CLICKED</a></li>
+<li><a href="#obsession">OBSESSION</a></li>
+<li><a href="#socials">FIND US</a></li>
+<li><a href="#clickz">CLICKZ</a></li>
+</ul>
+
+</nav>
+
+
+<header class="hero">
+
+<h1>PIXEL</h1>
+
+<p>CLICK IN. ENTER OUR WORLD.</p>
+
+<a class="button" href="#about">
+ENTER PIXEL →
+</a>
+
+</header>
+
+
+<section id="about">
+
+<h2 class="title">WHO IS PIXEL?</h2>
+
+<img
+src="PIXEL LOGO.png"
+alt="PIXEL Logo"
+style="display:block;margin:0 auto 30px auto;max-width:250px;"
+>
+
+<div class="info-box center">
+
+<p>
+PIXEL is an independent girl group based in
+<strong>Malta & Gozo 🇲🇹</strong>.
+</p>
+
+<br>
+
+<p>
+<strong>Four members. Four personalities.</strong>
+One PIXEL universe.
+</p>
+
+<br>
+
+<p>
+PIXEL isn't following the traditional K-pop system.
+We're creating our own identity, our own music,
+our own style and our own world.
+</p>
+
+<br>
+
+<p>
+💜 Group representative color: <strong>Purple</strong>
+</p>
+
+</div>
+
+</section>
+
+
+<section id="members">
+
+<h2 class="title">MEET PIXEL</h2>
+
+<div class="members">
+
+
+<div class="member">
+
+<div class="avatar jinx">J</div>
+
+<h3>JINX</h3>
+
+<p>
+💙 <strong>Main Rapper</strong><br>
+🐣 <strong>Maknae</strong><br>
+⚡ Electric Blue<br>
+🖤 Black<br>
+📍 Gozo<br>
+Real Name: Jeanine
+
+<br><br>
+
+Techy member 💻<br>
+Funniest member 😂<br>
+Shortest member 📏<br>
+Shortest hair ✂️
+</p>
+
+</div>
+
+
+<div class="member">
+
+<div class="avatar mymy">M</div>
+
+<h3>Mymy</h3>
+
+<p>
+💜 <strong>All-rounder</strong><br>
+💜 Purple<br>
+📍 Malta<br>
+🇬🇧 Half English<br>
+Real Name: Mya
+
+<br><br>
+
+Oldest member 👑<br>
+Straight hair 💇‍♀️<br>
+One of the members with the darkest hair 🖤
+</p>
+
+</div>
+
+
+<div class="member">
+
+<div class="avatar soso">S</div>
+
+<h3>Soso</h3>
+
+<p>
+🩷 <strong>Leader</strong><br>
+🎤 <strong>Main Vocalist</strong><br>
+🩷 Pink<br>
+📍 Malta<br>
+Real Name: Sophie
+
+<br><br>
+
+Big but soft 🧸<br>
+Soft black hair with a touch of curls 🖤<br>
+Longest hair 💇‍♀️
+</p>
+
+</div>
+
+
+<!-- KARKAR -->
+
+<div class="member">
+
+<div class="avatar karkar">K</div>
+
+<h3>Karkar</h3>
+
+<p>
+❤️ <strong>Main Dancer</strong><br>
+❤️ Red<br>
+📍 Gozo<br>
+Real Name: Karen
+
+<br><br>
+
+🐣 Youngest member — unofficial<br>
+🖤 Straight black hair<br>
+📏 Shortest member
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<section id="clicked">
+
+<h2 class="title">CLICKED</h2>
+
+<div class="album">
+
+<div>
+
+<img
+src="clicked.png"
+alt="PIXEL CLICKED album artwork"
+>
+
+</div>
+
+<div class="album-info">
+
+<h3>CLICKED</h3>
+
+<p>
+The upcoming PIXEL album.
+</p>
+
+<p>
+💜 Digital dreams<br>
+🖱️ Clicks<br>
+🌈 Color<br>
+💻 Internet-inspired visuals<br>
+✨ PIXEL chaos
+</p>
+
+<p>
+The album artwork features the colorful
+digital PIXEL aesthetic.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="obsession">
+
+<h2 class="title">OBSESSION</h2>
+
+<div class="song">
+
+<h3>OBSESSION</h3>
+
+<p>
+The whole school likes PIXEL.
+</p>
+
+<p>
+The whole school knows PIXEL.
+</p>
+
+<p>
+And now...
+
+<strong>
+everyone is obsessed.
+</strong>
+
+</p>
+
+<a class="button" href="#">
+MUSIC VIDEO SOON 🎬
+</a>
+
+</div>
+
+</section>
+
+
+<section id="socials">
+
+<h2 class="title">FIND PIXEL</h2>
+
+<div class="socials">
+
+
+<div class="social-card">
+
+<h3>💙 JINX</h3>
+
+<a
+href="https://scratch.mit.edu/users/Jelly_Jeanine123/"
+target="_blank">
+🎮 Scratch
+</a>
+
+<a
+href="https://www.roblox.com/users/"
+target="_blank">
+🎮 Roblox — kokam_655
+</a>
+
+<p>
+Roblox display name:
+<strong>jeanine 3</strong>
+</p>
+
+</div>
+
+
+<div class="social-card">
+
+<h3>💜 Mymy</h3>
+
+<a
+href="https://scratch.mit.edu/users/myalowkey8/"
+target="_blank">
+🎮 Scratch
+</a>
+
+<a
+href="https://www.roblox.com/users/"
+target="_blank">
+🎮 Roblox — myasecrets7
+</a>
+
+<a
+href="https://www.youtube.com/@Mymy_obsession"
+target="_blank">
+YouTube - mymy_obsession
+</a>
+
+</div>
+
+
+<div class="social-card">
+
+<h3>🩷 Soso</h3>
+
+<a
+href="https://scratch.mit.edu/users/to-sosodgreat3001/"
+target="_blank">
+🎮 Scratch
+</a>
+
+<a
+href="https://www.roblox.com/users/"
+target="_blank">
+🎮 Roblox — sosodgreat30
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<section id="clickz">
+
+<div class="clickz">
+
+<h3>CLICKZ</h3>
+
+<p style="margin-top:25px;line-height:1.8;">
+
+The PIXEL fandom name is currently
+<strong>not officially decided</strong>.
+
+<br><br>
+
+But...
+
+<br>
+
+maybe you're already a CLICKZ. 👀💜
+
+</p>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="footer-logo">
+PIXEL
+</div>
+
+<p>
+Malta & Gozo 🇲🇹
+</p>
+
+<p style="margin-top:10px;">
+© 2026 PIXEL
+</p>
+
+</footer>
+
+
+</body>
+</html>
+```
